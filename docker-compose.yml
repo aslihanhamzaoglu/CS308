@@ -1,0 +1,60 @@
+# docker-compose.yml  ─── place in project root (alongside CS308-Frontend & CS308-Backend)
+
+services:
+  # ───────────── FRONTEND (React + Vite) ─────────────
+  frontend:
+    build:
+      context: ./CS308-Frontend          # <─ correct folder name
+    container_name: cs308-frontend
+    ports:
+      - "8080:8080"                      # host:container
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    volumes:
+      - ./CS308-Frontend:/app            # live-reload source mount
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - cs308-network
+
+  # ───────────── BACKEND (Node/Express) ─────────────
+  backend:
+    build:
+      context: ./CS308-Backend           # <─ correct folder name
+    container_name: cs308-backend
+    env_file:
+      - ./CS308-Backend/.env
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./CS308-Backend:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    networks:
+      - cs308-network
+
+  # ───────────── DATABASE (MySQL 8) ─────────────
+  db:
+    image: mysql:8
+    container_name: cs308-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ecommerce_db
+      MYSQL_USER: ecommerce_user
+      MYSQL_PASSWORD: ecommerce_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cs308-network
+
+# ────────────────────────────────────────────────────
+networks:
+  cs308-network:
+
+volumes:
+  mysql_data:
