@@ -1,0 +1,96 @@
+.about-section {
+    background-color: var(--forest-green); /* Dark green background */
+    color: #fefae0; 
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  /* Hero Section */
+  .about-hero {
+    margin-bottom: 40px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    color: #c77e55;
+  }
+  
+  .about-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* About Content */
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+  
+  /* Text Styling */
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #fefae0;
+  }
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #fefae0; 
+  }
+  
+  /* Image Styling */
+  .about-image {
+    width: 280px;
+    border-radius: 12px;
+    background-color: #c77e55; 
+    padding: 10px;
+    box-shadow: 0 4px 10px #c77e55(0, 0, 0, 0.2);
+  }
+  
+  /* Why Shop Section */
+  .why-shop {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .why-shop h2 {
+    font-size: 1.8rem;
+    font-family: "Playfair Display", serif;
+    color: #c77e55;
+    margin-bottom: 10px;
+  }
+  
+  .why-shop p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+  
+  /* CTA Button */
+  .about-cta {
+    margin-top: 20px;
+  }
+  
+  .about-cta .button {
+    display: inline-block;
+    background-color: #fefae0;
+    color: var(--forest-green);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .about-cta .button:hover {
+    background-color: #e9f5db;
+  }

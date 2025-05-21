@@ -1,0 +1,39 @@
+/* Hide default number input arrows in all browsers */
+.quantity-input {
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* Safari & Chrome */
+    appearance: none;
+    text-align: center;
+    width: 3rem;
+    border: 1px solid #223e67;
+    border-radius: 6px;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    color: #111827;
+    margin: 0 0.5rem;
+  }
+  
+  /* Remove up/down arrows from number input (Chrome, Safari, Edge) */
+  .quantity-input::-webkit-outer-spin-button,
+  .quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Quantity button styles */
+  .quantity-btn {
+    background-color: #d9f99d; /* driftmood-lime */
+    border: none;
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    color: #1b1b1b;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #bef264; /* darker lime on hover */
+  }

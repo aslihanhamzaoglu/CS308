@@ -1,0 +1,32 @@
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  max-height: 100px;
+  width: auto;
+}
+
+.logo-small .logo-image {
+  max-height: 60px;
+}
+
+.logo-medium .logo-image {
+  max-height: 100px;
+}
+
+.logo-large .logo-image {
+  max-height: 140px;
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    max-height: 80px;
+  }
+  
+  .logo-medium .logo-image {
+    max-height: 80px;
+  }
+}

@@ -1,0 +1,247 @@
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--forest-green);
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--dark-gray);
+  font-family: 'Playfair Display', serif;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: var(--light-mint);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-name {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.category-card h3 {
+  font-weight: 600;
+  color: var(--forest-green);
+  transition: color 0.3s ease;
+}
+
+.category-card:hover h3 {
+  color: var(--terracotta);
+}
+
+/* Featured Products Section */
+.featured-products-section {
+  padding: 80px 0;
+  background-color: var(--light-mint);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.view-all-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-all-link a {
+  color: var(--forest-green);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.view-all-link a:hover {
+  color: var(--terracotta);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--dark-gray);
+  font-family: 'Playfair Display', serif;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dark-gray);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: var(--cream);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--forest-green);
+}
+
+/* Subscription Section */
+.subscription-section {
+  padding: 80px 0;
+  background-color: var(--forest-green);
+  color: white;
+}
+
+.subscription-content {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.subscription-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.subscription-content p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.subscription-content .button {
+  background-color: white;
+  color: var(--forest-green);
+}
+
+.subscription-content .button:hover {
+  background-color: var(--light-mint);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .categories-grid,
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .products-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  background-color: var(--forest-green);
+  color: white;
+  padding: 60px 0 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  flex: 0 0 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.footer-brand .logo h1 {
+  color: white;
+}
+
+.footer-brand p {
+  margin: 15px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.footer-brand .logo-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+/* If you need to adjust the logo size specifically in the footer */
+.footer-brand .logo-container img {
+  height: 5rem; /* This matches h-20 */
+  width: auto;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-links-column {
+  min-width: 160px;
+}
+
+.footer-links-column h3 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-links-column ul {
+  list-style: none;
+}
+
+.footer-links-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links-column ul li a {
+  color: white;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.footer-links-column ul li a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-brand {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .footer-links {
+    width: 100%;
+  }
+}
