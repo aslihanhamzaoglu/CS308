@@ -31,7 +31,8 @@ services:
       - ./CS308-Backend:/app
       - /app/node_modules
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - cs308-network
 
@@ -49,8 +50,13 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./CS308-Backend/database_scripts.sql:/docker-entrypoint-initdb.d/01-database_scripts.sql
-      - ./CS308-Backend/demo_data.sql:/docker-entrypoint-initdb.d/02-demo_data.sql
+      - ./CS308-Backend/MySQL_scripts/database_scripts.sql:/docker-entrypoint-initdb.d/01-database_scripts.sql
+      - ./CS308-Backend/MySQL_scripts/demo_data.sql:/docker-entrypoint-initdb.d/02-demo_data.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
     networks:
       - cs308-network
 
