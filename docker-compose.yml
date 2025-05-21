@@ -32,7 +32,6 @@ services:
       - /app/node_modules
     depends_on:
       - db
-      - db-init
     networks:
       - cs308-network
 
@@ -50,27 +49,6 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./CS308-Backend/src/database/dummy_data.sql:/docker-entrypoint-initdb.d/01-dummy_data.sql
-      - ./CS308-Backend/src/database/demo_data.sql:/docker-entrypoint-initdb.d/02-demo_data.sql
-    networks:
-      - cs308-network
-
-  # ───────────── DATABASE INITIALIZATION ─────────────
-  db-init:
-    image: mysql:8
-    container_name: cs308-db-init
-    depends_on:
-      db:
-        condition: service_healthy
-    command: >
-      bash -c "
-        echo 'Waiting for database to be ready...' &&
-        sleep 10 &&
-        mysql -h db -u root -prootpassword ecommerce_db < /docker-entrypoint-initdb.d/01-dummy_data.sql &&
-        mysql -h db -u root -prootpassword ecommerce_db < /docker-entrypoint-initdb.d/02-demo_data.sql &&
-        echo 'Database initialization completed!'
-      "
-    volumes:
       - ./CS308-Backend/src/database/dummy_data.sql:/docker-entrypoint-initdb.d/01-dummy_data.sql
       - ./CS308-Backend/src/database/demo_data.sql:/docker-entrypoint-initdb.d/02-demo_data.sql
     networks:
